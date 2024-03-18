@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Sentiment Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        label {
+            font-size: 18px;
+            color: #333;
+        }
+        textarea {
+            width: 80%;
+            padding: 10px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: none;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            text-align: center;
+            color: #28a745;
+        }
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Review Sentiment Analyzer</h1>
+    <form action="/" method="post">
+        <label for="review">Enter your review:</label><br>
+        <textarea id="review" name="review" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    {% if sentiment is not none %}
+    <h2>Sentiment: {% if sentiment == 1 %} Positive {% elif sentiment == 0 %} Negative {% else %} Neutral {% endif %}</h2>
+    {% endif %}
+    <br>
+    {% if f1 is not none %}
+    <p>F1 Score: {{ f1 }}</p>
+    {% endif %}
+</body>
+</html>
+
+
+
+
+
+
+<!----
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Sentiment Analyzer</title>
+</head>
+<body>
+    <h1>Review Sentiment Analyzer</h1>
+    <form action="/" method="post">
+        <label for="review">Enter your review:</label><br>
+        <textarea id="review" name="review" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    {% if sentiment is not none %}
+    <h2>Sentiment: {% if sentiment == 1 %} Positive {% elif sentiment == 0 %} Negative {% else %} Neutral {% endif %}</h2>
+    {% endif %}
+    <br>
+    {% if f1 is not none %}
+    <p>F1 Score: {{ f1 }}</p>
+    {% endif %}
+</body>
+</html>
